@@ -58,4 +58,49 @@ public class MaquinaDeLavar {
         tampaAberta = false;
         System.out.println("Máquina fechada");
     }
+    public void pausarLavagem(){
+        if ("lavando".equals(estado)){
+            System.out.println("Lavagem pausando");
+            estado = "pausado";
+        }
+        else{
+            System.out.println("Máquina já está desligada");
+        }
+    }
+    public void retomarLavagem(){
+        if("pausado".equals(estado)){
+            System.out.println("Lavagem retornando");
+            estado = "lavando";
+        }
+        else{
+            System.out.println("Máquina não está pausada");
+        }
+    }
+    public void concluirLavagem(){
+        if ("lavando".equals(estado)){
+            System.out.println("Lavagem concluida!");
+            estado = "concluida";
+        }
+        else{
+            System.out.println("Máquina ainda lavando");
+        }
+    }
+    public void iniciarCentrifugacao(){
+        if("lavando".equals(estado) || "concluida".equals(estado)){
+            System.out.println("Centrifugação Iniciada");
+            estado = "centrifugando";
+        }
+        else{
+            System.out.println("Máquina não está pronta para centrifugar");
+        }
+    }
+    public void concluirCentrifugacao(){
+        if("centrifugando".equals(estado)){
+            System.out.println("Centrifugação Concluida com Sucesso");
+            estado = "desligado";
+        }
+        else{
+            System.out.println("Máquina ainda Centrifugando");
+        }
+    }
 }
