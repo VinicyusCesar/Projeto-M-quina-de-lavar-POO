@@ -1,1 +1,0 @@
-# Projeto-M-quina-de-lavar-POO
